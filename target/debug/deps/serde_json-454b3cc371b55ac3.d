@@ -1,0 +1,13 @@
+/Users/oswin/Projects/Rust/Geoffrey/target/debug/deps/serde_json-454b3cc371b55ac3.rmeta: /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/lib.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/macros.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/de.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/error.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/map.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/ser.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/value.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/number.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/read.rs
+
+/Users/oswin/Projects/Rust/Geoffrey/target/debug/deps/serde_json-454b3cc371b55ac3.d: /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/lib.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/macros.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/de.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/error.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/map.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/ser.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/value.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/number.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/read.rs
+
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/lib.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/macros.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/de.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/error.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/map.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/ser.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/value.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/number.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_json-0.9.10/src/read.rs:

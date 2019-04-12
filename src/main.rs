@@ -1,7 +1,5 @@
 extern crate gotham;
 
-use gotham::state::State;
-
 #[macro_use]
 extern crate gotham_derive;
 extern crate hyper;
@@ -11,23 +9,24 @@ extern crate serde;
 extern crate serde_derive;
 extern crate serde_json;
 
-extern crate mleap-rs
-
 use hyper::{Body, Response, StatusCode};
 
 use gotham::helpers::http::response::create_response;
 use gotham::router::{builder::*, Router};
 use gotham::state::{FromState, State};
 
-pub mod dsl;
-pub mod json;
-pub mod ser;
-pub mod tform;
-pub mod frame;
+//pub mod dsl;
+//pub mod json;
+//pub mod ser;
+//pub mod tform;
+//pub mod frame;
+
+pub mod bundle;
+
+pub use bundle::* ;
 
 ///figure out how to use mleap-rs in your project
 ///posibly fork the entire project if necesarry
-
 
 const HELLO_WORLD: &'static str = "Hello World!";
 
@@ -117,7 +116,7 @@ fn get_product_handler(mut state: State) -> (State, Response<Body>) {
         // code or middlewares.
         let query_param = QueryStringExtractor::take_from(&mut state);
 
-        let score = scoring(query_param)
+        let score = scoring(query_param);
 
         //let product = Product {
         //    c0: query_param.c0,
@@ -171,10 +170,3 @@ pub fn main() {
     println!("Listening for requests at http://{}", addr);
     gotham::start(addr, router())
 }
-
-/// Start a server and call the `Handler` we've defined above for each `Request` we receive.
-//pub fn main() {
-//    let addr = "127.0.0.1:7878";
-//    println!("Listening for requests at http://{}", addr);
-//    gotham::start(addr, || Ok(say_hello))
-//}
