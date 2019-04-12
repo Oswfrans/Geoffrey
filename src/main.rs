@@ -11,18 +11,24 @@ extern crate serde;
 extern crate serde_derive;
 extern crate serde_json;
 
+extern crate mleap-rs
+
 use hyper::{Body, Response, StatusCode};
 
 use gotham::helpers::http::response::create_response;
 use gotham::router::{builder::*, Router};
 use gotham::state::{FromState, State};
 
-/// [x] update to handle both say_hello and get request
+use mleap-rs::tform;
+use mleap-rs::dsl;
+use mleap-rs::json;
+use mleap-rs::ser;
+use mleap-rs::tform;
+use mleap-rs::frame;
 
-///update to handle simple schema
-/// get or create simple mleap model that takes said schema
+///figure out how to use mleap-rs in your project
+///posibly fork the entire project if necesarry
 
-/// update get_product_handler to output score from mleap
 
 const HELLO_WORLD: &'static str = "Hello World!";
 
@@ -30,12 +36,73 @@ const HELLO_WORLD: &'static str = "Hello World!";
 ///to be changed
 #[derive(Deserialize, StateData, StaticResponseExtender)]
 struct QueryStringExtractor {
-    name: String,
+    c0: f64,
+    c1: f64,
+    c2: f64,
+    c3: f64,
+    c4: f64,
+    c5: f64,
+    c6: f64,
+    c7: f64,
 }
 /// A Product
 #[derive(Serialize)]
 struct Product {
-    name: String,
+    c0: f64,
+    c1: f64,
+    c2: f64,
+    c3: f64,
+    c4: f64,
+    c5: f64,
+    c6: f64,
+    c7: f64,
+}
+
+fn scoring(QueryStringExtractor: query_param) -> f64 {
+
+    let path = "/tmp/model";
+    let builder = ser::FileBuilder::try_new(path).unwrap();
+    let mut registry = ser::Registry::new();
+
+    registry.insert_op(tform::linear_regression::OP);
+    registry.insert_op(tform::pipeline::OP);
+    registry.insert_op(tform::vector_assembler::OP);
+    registry.insert_op(tform::standard_scaler::OP);
+
+    let ctx = ser::Context::new(Box::new(builder), &registry);
+    let ctx2 = ctx.try_next("root").unwrap();
+    let node = ctx2.read_node().unwrap();
+
+    let mut frame = frame::LeapFrame::with_size(1);
+
+    frame.try_with_doubles(query_param.c0).unwrap();
+    frame.try_with_doubles(query_param.c1).unwrap();
+    frame.try_with_doubles(query_param.c2).unwrap();
+    frame.try_with_doubles(query_param.c3).unwrap();
+    frame.try_with_doubles(query_param.c4).unwrap();
+    frame.try_with_doubles(query_param.c5).unwrap();
+    frame.try_with_doubles(query_param.c6).unwrap();
+    frame.try_with_doubles(query_param.c7).unwrap();
+
+    //frame.try_with_doubles(String::from("bathrooms"), vec![2.0]).unwrap();
+    //frame.try_with_doubles(String::from("bedrooms"), vec![3.0]).unwrap();
+    //frame.try_with_doubles(String::from("security_deposit"), vec![50.0]).unwrap();
+    //frame.try_with_doubles(String::from("cleaning_fee"), vec![30.0]).unwrap();
+    //frame.try_with_doubles(String::from("extra_people"), vec![0.0]).unwrap();
+    //frame.try_with_doubles(String::from("number_of_reviews"), vec![23.0]).unwrap();
+    //frame.try_with_doubles(String::from("square_feet"), vec![1200.0]).unwrap();
+    //frame.try_with_doubles(String::from("review_scores_rating"), vec![93.0]).unwrap();
+
+    //frame.try_with_strings(String::from("cancellation_policy"), vec![String::from("strict")]).unwrap();
+    //frame.try_with_strings(String::from("host_is_superhost"), vec![String::from("1.0")]).unwrap();
+    //frame.try_with_strings(String::from("instant_bookable"), vec![String::from("1.0")]).unwrap();
+    //frame.try_with_strings(String::from("room_type"), vec![String::from("Entire home/apt")]).unwrap();
+    //frame.try_with_strings(String::from("state"), vec![String::from("NY")]).unwrap();
+
+    node.transform(&mut frame).unwrap();
+
+    let r = frame.get_doubles("prediction").and_then(|x| x.first()).unwrap();
+    r
 }
 
 fn get_product_handler(mut state: State) -> (State, Response<Body>) {
@@ -51,14 +118,24 @@ fn get_product_handler(mut state: State) -> (State, Response<Body>) {
         // code or middlewares.
         let query_param = QueryStringExtractor::take_from(&mut state);
 
-        let product = Product {
-            name: query_param.name,
-        };
+        let score = scoring(query_param)
+
+        //let product = Product {
+        //    c0: query_param.c0,
+        //    c1: query_param.c1,
+        //    c2: query_param.c2,
+        //    c3: query_param.c3,
+        //    c4: query_param.c4,
+        //    c5: query_param.c5,
+        //    c6: query_param.c6,
+        //    c7: query_param.c7,
+        //};
+
         create_response(
             &state,
             StatusCode::OK,
             mime::APPLICATION_JSON,
-            serde_json::to_vec(&product).expect("serialized product"),
+            serde_json::to_vec(&score).expect("serialized product"),
         )
     };
     (state, res)
