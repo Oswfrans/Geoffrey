@@ -19,12 +19,11 @@ use gotham::helpers::http::response::create_response;
 use gotham::router::{builder::*, Router};
 use gotham::state::{FromState, State};
 
-use mleap-rs::tform;
-use mleap-rs::dsl;
-use mleap-rs::json;
-use mleap-rs::ser;
-use mleap-rs::tform;
-use mleap-rs::frame;
+pub mod dsl;
+pub mod json;
+pub mod ser;
+pub mod tform;
+pub mod frame;
 
 ///figure out how to use mleap-rs in your project
 ///posibly fork the entire project if necesarry
