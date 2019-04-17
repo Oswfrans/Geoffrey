@@ -1,0 +1,9 @@
+{
+  "op": "pipeline",
+  "attributes": {
+    "nodes": {
+      "string": ["VectorAssembler_18b715378f42", "StandardScaler_5a4909ffc1e2", "LinearRegression_063e4c64538b"],
+      "type": "list"
+    }
+  }
+}

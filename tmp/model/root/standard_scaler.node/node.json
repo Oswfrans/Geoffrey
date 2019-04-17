@@ -1,0 +1,13 @@
+{
+  "name": "standard_scaler",
+  "shape": {
+    "inputs": [{
+      "port": "input",
+      "name": "features"
+    }],
+    "outputs": [{
+      "port": "output",
+      "name": "scaledFeatures"
+    }]
+  }
+}

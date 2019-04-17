@@ -1,22 +1,4 @@
 [[package]]
-name = "Geoffrey"
-version = "0.1.0"
-dependencies = [
- "base64 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "gotham 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "gotham_derive 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "hyper 0.12.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "libc 0.2.51 (registry+https://github.com/rust-lang/crates.io-index)",
- "mime 0.3.13 (registry+https://github.com/rust-lang/crates.io-index)",
- "semver 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 0.9.15 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_derive 1.0.90 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 0.9.10 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "zip 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "adler32"
 version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -327,6 +309,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "futures 0.1.26 (registry+https://github.com/rust-lang/crates.io-index)",
  "num_cpus 1.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "geoffrey"
+version = "0.1.0"
+dependencies = [
+ "base64 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gotham 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gotham_derive 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hyper 0.12.27 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.51 (registry+https://github.com/rust-lang/crates.io-index)",
+ "mime 0.3.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "semver 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.90 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_derive 1.0.90 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_json 0.9.10 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "zip 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]

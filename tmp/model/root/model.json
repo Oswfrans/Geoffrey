@@ -1,0 +1,12 @@
+{
+  "op": "pipeline",
+  "attributes": {
+    "nodes": {
+      "type": {
+        "type": "list",
+        "base": "string"
+      },
+      "value": ["feature_pipeline", "linear_regression"]
+    }
+  }
+}

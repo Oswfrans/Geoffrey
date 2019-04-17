@@ -1,0 +1,18 @@
+{
+  "op": "linear_regression",
+  "attributes": {
+    "coefficients": {
+      "double": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "shape": {
+        "dimensions": [{
+          "size": 8,
+          "name": ""
+        }]
+      },
+      "type": "tensor"
+    },
+    "intercept": {
+      "double": 0.36363636363636365
+    }
+  }
+}

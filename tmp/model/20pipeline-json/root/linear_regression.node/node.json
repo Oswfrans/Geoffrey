@@ -1,0 +1,13 @@
+{
+  "name": "linear_regression",
+  "shape": {
+    "inputs": [{
+      "port": "features",
+      "name": "scaledFeatures"
+    }],
+    "outputs": [{
+      "port": "prediction",
+      "name": "prediction"
+    }]
+  }
+}

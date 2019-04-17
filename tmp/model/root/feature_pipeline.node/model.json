@@ -1,0 +1,12 @@
+{
+  "op": "pipeline",
+  "attributes": {
+    "nodes": {
+      "type": {
+        "type": "list",
+        "base": "string"
+      },
+      "value": ["standard_scaler", "vector_assembler"]
+    }
+  }
+}

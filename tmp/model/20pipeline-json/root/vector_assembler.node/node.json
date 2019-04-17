@@ -1,0 +1,34 @@
+{
+  "name": "vector_assembler",
+  "shape": {
+    "inputs": [{
+      "port": "input0",
+      "name": "_c0"
+    }, {
+      "port": "input1",
+      "name": "_c1"
+    }, {
+      "port": "input2",
+      "name": "_c2"
+    }, {
+      "port": "input3",
+      "name": "_c3"
+    }, {
+      "port": "input4",
+      "name": "_c4"
+    }, {
+      "port": "input5",
+      "name": "_c5"
+    }, {
+      "port": "input6",
+      "name": "_c6"
+    }, {
+      "port": "input7",
+      "name": "_c7"
+    }],
+    "outputs": [{
+      "port": "output",
+      "name": "features"
+    }]
+  }
+}

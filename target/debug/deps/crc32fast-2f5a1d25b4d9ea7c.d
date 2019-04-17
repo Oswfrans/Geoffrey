@@ -1,0 +1,11 @@
+/Users/oswin/Projects/Rust/Geoffrey/target/debug/deps/libcrc32fast-2f5a1d25b4d9ea7c.rlib: /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/lib.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/baseline.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/combine.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/mod.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/table.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/pclmulqdq.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/aarch64.rs
+
+/Users/oswin/Projects/Rust/Geoffrey/target/debug/deps/crc32fast-2f5a1d25b4d9ea7c.d: /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/lib.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/baseline.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/combine.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/mod.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/table.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/pclmulqdq.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/aarch64.rs
+
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/lib.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/baseline.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/combine.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/mod.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/table.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/pclmulqdq.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/crc32fast-1.2.0/src/specialized/aarch64.rs:

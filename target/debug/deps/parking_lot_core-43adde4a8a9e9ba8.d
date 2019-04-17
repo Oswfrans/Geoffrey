@@ -1,0 +1,10 @@
+/Users/oswin/Projects/Rust/Geoffrey/target/debug/deps/libparking_lot_core-43adde4a8a9e9ba8.rlib: /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/lib.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/thread_parker/unix.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/parking_lot.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/spinwait.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/util.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/word_lock.rs
+
+/Users/oswin/Projects/Rust/Geoffrey/target/debug/deps/parking_lot_core-43adde4a8a9e9ba8.d: /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/lib.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/thread_parker/unix.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/parking_lot.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/spinwait.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/util.rs /Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/word_lock.rs
+
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/lib.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/thread_parker/unix.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/parking_lot.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/spinwait.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/util.rs:
+/Users/oswin/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/word_lock.rs:

@@ -9,6 +9,11 @@ extern crate serde;
 extern crate serde_derive;
 extern crate serde_json;
 
+extern crate uuid;
+extern crate semver;
+extern crate base64;
+extern crate libc;
+
 use hyper::{Body, Response, StatusCode};
 
 use gotham::helpers::http::response::create_response;
@@ -25,11 +30,6 @@ pub mod bundle;
 
 pub use bundle::* ;
 
-///figure out how to use mleap-rs in your project
-///posibly fork the entire project if necesarry
-
-const HELLO_WORLD: &'static str = "Hello World!";
-
 ///These are the extracter and the structure that we will use in our app
 ///to be changed
 #[derive(Deserialize, StateData, StaticResponseExtender)]
@@ -43,24 +43,16 @@ struct QueryStringExtractor {
     c6: f64,
     c7: f64,
 }
-/// A Product
-#[derive(Serialize)]
-struct Product {
-    c0: f64,
-    c1: f64,
-    c2: f64,
-    c3: f64,
-    c4: f64,
-    c5: f64,
-    c6: f64,
-    c7: f64,
-}
 
-fn scoring(QueryStringExtractor: query_param) -> f64 {
+fn scoring(query_param : QueryStringExtractor) -> f64 {
 
     let path = "/tmp/model";
-    let builder = ser::FileBuilder::try_new(path).unwrap();
+    let builder = ser::FileBuilder::try_new(path).expect("IO error OF");
     let mut registry = ser::Registry::new();
+
+    //LinearRegression_063e4c64538b
+    //StandardScaler_5a4909ffc1e2
+    //VectorAssembler_18b715378f42
 
     registry.insert_op(tform::linear_regression::OP);
     registry.insert_op(tform::pipeline::OP);
@@ -68,19 +60,19 @@ fn scoring(QueryStringExtractor: query_param) -> f64 {
     registry.insert_op(tform::standard_scaler::OP);
 
     let ctx = ser::Context::new(Box::new(builder), &registry);
-    let ctx2 = ctx.try_next("root").unwrap();
-    let node = ctx2.read_node().unwrap();
+    let ctx2 = ctx.try_next("root").expect("ctx error OF");
+    let node = ctx2.read_node().expect("another node error OF");
 
     let mut frame = frame::LeapFrame::with_size(1);
 
-    frame.try_with_doubles(query_param.c0).unwrap();
-    frame.try_with_doubles(query_param.c1).unwrap();
-    frame.try_with_doubles(query_param.c2).unwrap();
-    frame.try_with_doubles(query_param.c3).unwrap();
-    frame.try_with_doubles(query_param.c4).unwrap();
-    frame.try_with_doubles(query_param.c5).unwrap();
-    frame.try_with_doubles(query_param.c6).unwrap();
-    frame.try_with_doubles(query_param.c7).unwrap();
+    frame.try_with_doubles("c0".to_string() , vec![query_param.c0] ).expect("Data Error OF");
+    frame.try_with_doubles("c1".to_string() , vec![query_param.c1]).expect("Data Error OF");
+    frame.try_with_doubles("c2".to_string() , vec![query_param.c2]).expect("Data Error OF");
+    frame.try_with_doubles("c3".to_string() , vec![query_param.c3]).expect("Data Error OF");
+    frame.try_with_doubles("c4".to_string() , vec![query_param.c4]).expect("Data Error OF");
+    frame.try_with_doubles("c5".to_string() , vec![query_param.c5]).expect("Data Error OF");
+    frame.try_with_doubles("c6".to_string() , vec![query_param.c6]).expect("Data Error OF");
+    frame.try_with_doubles("c7".to_string() , vec![query_param.c7]).expect("Data Error OF");
 
     //frame.try_with_doubles(String::from("bathrooms"), vec![2.0]).unwrap();
     //frame.try_with_doubles(String::from("bedrooms"), vec![3.0]).unwrap();
@@ -97,10 +89,10 @@ fn scoring(QueryStringExtractor: query_param) -> f64 {
     //frame.try_with_strings(String::from("room_type"), vec![String::from("Entire home/apt")]).unwrap();
     //frame.try_with_strings(String::from("state"), vec![String::from("NY")]).unwrap();
 
-    node.transform(&mut frame).unwrap();
+    node.transform(&mut frame).expect("Node Transform Error OF");
 
-    let r = frame.get_doubles("prediction").and_then(|x| x.first()).unwrap();
-    r
+    let r = frame.get_doubles("prediction").and_then(|x| x.first()).expect("get pred error OF");
+    *r
 }
 
 fn get_product_handler(mut state: State) -> (State, Response<Body>) {
@@ -149,11 +141,11 @@ fn say_hello(state: State) -> (State, Response<Body>) {
 }
 
 /// Create a `Router`
-
+//future should get back to post request
 fn router() -> Router {
     build_simple_router(|route| {
         route
-            .post("/products")
+            .get("/products")
             // This tells the Router that for requests which match this route that query string
             // extraction should be invoked storing the result in a `QueryStringExtractor` instance.
             .with_query_string_extractor::<QueryStringExtractor>()
