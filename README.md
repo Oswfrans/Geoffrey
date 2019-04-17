@@ -6,5 +6,5 @@ Model serving using Gotham and a fork of mleap-rs. For models created using spar
 TBD:
 - Add tests
 - Rename to snake-case
-- Try more different type of pipelines
+- Try more different type of pipelines (extend framework to accept them)
 - Try more complex fe engineering
